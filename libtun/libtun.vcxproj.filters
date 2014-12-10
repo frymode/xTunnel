@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="all.h" />
+    <ClInclude Include="net\buffer_policy.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\socket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\route.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\speedometer.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\value_time.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\bridge.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\data_buffer.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\endpoint.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\endpoint_rule.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\local_endpoint_rule.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\remote_endpoint_rule.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\routing_rule.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\socket_endpoint.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\local_socket_rule.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\remote_socket_rule.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\endpoint_rule_registry.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\all.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\endpoint_rule_factory.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\rules\all.h">
+      <Filter>routing\rules</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\acceptor.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\connector.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\socket_connector.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\socket_acceptor.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="net\io_service_pool.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\endpoint_state.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\session.h">
+      <Filter>routing</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\socket_session.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\socket\socket_routing_rule.h">
+      <Filter>routing\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\http\http_proxy_rule.h">
+      <Filter>routing\http</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\http\http_proxy_session.h">
+      <Filter>routing\http</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\http\http_request_processor.h">
+      <Filter>routing\http</Filter>
+    </ClInclude>
+    <ClInclude Include="routing\http\http_request_parser.h">
+      <Filter>routing\http</Filter>
+    </ClInclude>
+    <ClInclude Include="threading.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="logs.h" />
+    <ClInclude Include="regex.h" />
+    <ClInclude Include="strutil.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="factory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="net\socket.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\buffer_policy.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\route.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\bridge.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\endpoint.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\rules\endpoint_rule.cpp">
+      <Filter>routing\rules</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\rules\local_endpoint_rule.cpp">
+      <Filter>routing\rules</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\rules\remote_endpoint_rule.cpp">
+      <Filter>routing\rules</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\rules\routing_rule.cpp">
+      <Filter>routing\rules</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\socket_endpoint.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\local_socket_rule.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\remote_socket_rule.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\rules\endpoint_rule_factory.cpp">
+      <Filter>routing\rules</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\acceptor.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\connector.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\socket_connector.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\socket_acceptor.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="net\io_service_pool.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\session.cpp">
+      <Filter>routing</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\socket_session.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\socket\socket_routing_rule.cpp">
+      <Filter>routing\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\http\http_proxy_rule.cpp">
+      <Filter>routing\http</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\http\http_proxy_session.cpp">
+      <Filter>routing\http</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\http\http_request_processor.cpp">
+      <Filter>routing\http</Filter>
+    </ClCompile>
+    <ClCompile Include="routing\http\http_request_parser.cpp">
+      <Filter>routing\http</Filter>
+    </ClCompile>
+    <ClCompile Include="strutil.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="logs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="routing">
+      <UniqueIdentifier>{9d02c6ec-e8a1-4d50-92a0-9dc61ee6178e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{a2b975d1-334d-4e6d-8bd6-2630baeb1fdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="routing\rules">
+      <UniqueIdentifier>{5586eff3-5a6c-4edd-bd41-5c4a7e67146b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="routing\socket">
+      <UniqueIdentifier>{b30f8351-6fd3-4b86-97dc-af36fb491bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="routing\http">
+      <UniqueIdentifier>{e5b8fca0-8554-47c2-bc36-6397f2ccfda5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

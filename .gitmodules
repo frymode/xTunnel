@@ -1,0 +1,3 @@
+[submodule "lib/xtrap"]
+	path = lib/xtrap
+	url = https://github.com/frymode/xtrap.git

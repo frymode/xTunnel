@@ -1,0 +1,8 @@
+bin
+obj
+stage
+ipch
+*.sdf
+*.user
+*.suo
+*.opensdf

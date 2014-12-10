@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{00F808ED-5EA0-4250-BB39-A4C7F7DFDF15}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libtun</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\libraries.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\libraries.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\stage\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\stage\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="all.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="factory.h" />
+    <ClInclude Include="logs.h" />
+    <ClInclude Include="net\buffer_policy.h" />
+    <ClInclude Include="net\io_service_pool.h" />
+    <ClInclude Include="net\socket.h" />
+    <ClInclude Include="regex.h" />
+    <ClInclude Include="routing\acceptor.h" />
+    <ClInclude Include="routing\bridge.h" />
+    <ClInclude Include="routing\endpoint_state.h" />
+    <ClInclude Include="routing\connector.h" />
+    <ClInclude Include="routing\data_buffer.h" />
+    <ClInclude Include="routing\endpoint.h" />
+    <ClInclude Include="routing\http\http_proxy_rule.h" />
+    <ClInclude Include="routing\http\http_proxy_session.h" />
+    <ClInclude Include="routing\http\http_request_parser.h" />
+    <ClInclude Include="routing\http\http_request_processor.h" />
+    <ClInclude Include="routing\route.h" />
+    <ClInclude Include="routing\rules\all.h" />
+    <ClInclude Include="routing\rules\endpoint_rule.h" />
+    <ClInclude Include="routing\rules\endpoint_rule_registry.h" />
+    <ClInclude Include="routing\rules\local_endpoint_rule.h" />
+    <ClInclude Include="routing\rules\remote_endpoint_rule.h" />
+    <ClInclude Include="routing\rules\endpoint_rule_factory.h" />
+    <ClInclude Include="routing\rules\routing_rule.h" />
+    <ClInclude Include="routing\session.h" />
+    <ClInclude Include="routing\socket\all.h" />
+    <ClInclude Include="routing\socket\socket_acceptor.h" />
+    <ClInclude Include="routing\socket\socket_connector.h" />
+    <ClInclude Include="routing\socket\socket_endpoint.h" />
+    <ClInclude Include="routing\socket\local_socket_rule.h" />
+    <ClInclude Include="routing\socket\remote_socket_rule.h" />
+    <ClInclude Include="routing\socket\socket_routing_rule.h" />
+    <ClInclude Include="routing\socket\socket_session.h" />
+    <ClInclude Include="routing\speedometer.h" />
+    <ClInclude Include="routing\value_time.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="strutil.h" />
+    <ClInclude Include="threading.h" />
+    <ClInclude Include="timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="logs.cpp" />
+    <ClCompile Include="net\buffer_policy.cpp" />
+    <ClCompile Include="net\io_service_pool.cpp" />
+    <ClCompile Include="net\socket.cpp" />
+    <ClCompile Include="routing\acceptor.cpp" />
+    <ClCompile Include="routing\bridge.cpp" />
+    <ClCompile Include="routing\connector.cpp" />
+    <ClCompile Include="routing\endpoint.cpp" />
+    <ClCompile Include="routing\http\http_proxy_rule.cpp" />
+    <ClCompile Include="routing\http\http_proxy_session.cpp" />
+    <ClCompile Include="routing\http\http_request_parser.cpp" />
+    <ClCompile Include="routing\http\http_request_processor.cpp" />
+    <ClCompile Include="routing\route.cpp" />
+    <ClCompile Include="routing\rules\endpoint_rule.cpp" />
+    <ClCompile Include="routing\rules\local_endpoint_rule.cpp" />
+    <ClCompile Include="routing\rules\remote_endpoint_rule.cpp" />
+    <ClCompile Include="routing\rules\endpoint_rule_factory.cpp" />
+    <ClCompile Include="routing\rules\routing_rule.cpp" />
+    <ClCompile Include="routing\session.cpp" />
+    <ClCompile Include="routing\socket\socket_acceptor.cpp" />
+    <ClCompile Include="routing\socket\socket_connector.cpp" />
+    <ClCompile Include="routing\socket\socket_endpoint.cpp" />
+    <ClCompile Include="routing\socket\local_socket_rule.cpp" />
+    <ClCompile Include="routing\socket\remote_socket_rule.cpp" />
+    <ClCompile Include="routing\socket\socket_routing_rule.cpp" />
+    <ClCompile Include="routing\socket\socket_session.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="strutil.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
