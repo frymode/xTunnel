@@ -1,3 +1,7 @@
 [submodule "lib/xtrap"]
 	path = lib/xtrap
 	url = https://github.com/frymode/xtrap.git
+[submodule "lib/log4cplus"]
+	path = lib/log4cplus
+	url = https://github.com/frymode/log4cplus.git
+	branch = 1.2.x
