@@ -14,6 +14,8 @@ namespace xTunnel
 {
     void foo()
     {
+        logs::EnableLogging();
+
         Config config;
 
         EndpointRuleFactory ff;

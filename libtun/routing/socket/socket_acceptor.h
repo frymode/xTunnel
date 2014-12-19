@@ -9,13 +9,13 @@ namespace xTunnel
     class SocketAcceptor : public Acceptor, public enable_shared_from_this<SocketAcceptor>
     {
     public:
-        SocketAcceptor(const LocalSocketRulePtr& rule, const Handler& handler);
+        SocketAcceptor(const LocalSocketRulePtr& rule);
         virtual ~SocketAcceptor();
 
         const LocalSocketRule& rule() const { return *_rule; }
 
     private:
-        void BeginAccept();
+        virtual void BeginAccept() override;
         void EndAccept(const SocketPtr& socket, const ErrorCode& error);
         static void HandleAccept(weak_ptr<SocketAcceptor> self, SocketPtr socket, const ErrorCode& error);
 

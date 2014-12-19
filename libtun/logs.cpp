@@ -5,6 +5,7 @@
 #include <log4cplus/hierarchy.h>
 #include <log4cplus/consoleappender.h>
 #include <log4cplus/fileappender.h>
+#include <log4cplus/win32debugappender.h>
 
 namespace xTunnel
 {
@@ -52,6 +53,12 @@ namespace xTunnel
             logger.addAppender(appender);
         }
 
+        void AddDebugAppender(Logger& logger)
+        {
+            log4cplus::SharedAppenderPtr appender(new log4cplus::Win32DebugAppender());
+            logger.addAppender(appender);
+        }
+
         void AddFileAppender(Logger& logger, const string& path)
         {
             log4cplus::SharedAppenderPtr appender(new log4cplus::FileAppender(path));
@@ -63,8 +70,26 @@ namespace xTunnel
             Logger::getDefaultHierarchy().disableAll();
         }
 
+        static bool _logging_initialized;
+
+        static void InitLogging()
+        {
+            if (!_logging_initialized)
+            {
+                _logging_initialized = true;
+                log4cplus::initialize();
+
+                log4cplus::SharedAppenderPtr appender(new log4cplus::Win32DebugAppender());
+                for (Logger& logger : log4cplus::getDefaultHierarchy().getCurrentLoggers())
+                {
+                    logger.addAppender(appender);
+                }
+            }
+        }
+
         void EnableLogging()
         {
+            InitLogging();
             Logger::getDefaultHierarchy().enableAll();
         }
     }

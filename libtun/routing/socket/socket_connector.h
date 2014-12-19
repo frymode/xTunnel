@@ -9,11 +9,11 @@ namespace xTunnel
     class SocketConnector : public Connector, public enable_shared_from_this<SocketConnector>
     {
     public:
-        SocketConnector(const RemoteSocketRulePtr& rule, const Handler& handler);
+        SocketConnector(const RemoteSocketRulePtr& rule);
         virtual ~SocketConnector();
 
     private:
-        void BeginConnect();
+        virtual void BeginConnect() override;
         void EndConnect(const ErrorCode& error);
         static void HandleConnect(weak_ptr<SocketConnector> self, const ErrorCode& error);
 

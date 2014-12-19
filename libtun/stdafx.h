@@ -38,6 +38,7 @@
 namespace xTunnel
 {
     using namespace std;
+    using namespace std::placeholders;
 
     using boost::noncopyable;
     using boost::format;

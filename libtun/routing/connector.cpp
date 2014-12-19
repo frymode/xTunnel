@@ -3,15 +3,19 @@
 
 namespace xTunnel
 {
-    Connector::Connector(const Handler& handler)
-        : _handler(handler)
-    {
-    }
-
     Connector::~Connector()
     {
         UniqueLock lock(_mutex);
         _handler = Handler();
+    }
+
+    void Connector::Start(const Handler& handler)
+    {
+        UniqueLock lock(_mutex);
+        _handler = handler;
+        lock.unlock();
+
+        BeginConnect();
     }
 
     void Connector::OnConnect(const ConnectResult& res)

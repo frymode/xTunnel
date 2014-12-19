@@ -26,13 +26,15 @@ namespace xTunnel
         ConfigProperties cfg = EndpointRule::Save();
         cfg.add("host", host);
         cfg.add("port", port);
-        
+
         return cfg;
     }
 
     ConnectorPtr RemoteSocketRule::CreateConnector(const Connector::Handler& handler)
     {
         auto rule_ptr = static_pointer_cast<RemoteSocketRule>(shared_from_this());
-        return make_shared<SocketConnector>(rule_ptr, handler);
+        auto connector = make_shared<SocketConnector>(rule_ptr);
+        connector->Start(handler);
+        return connector;
     }
 }

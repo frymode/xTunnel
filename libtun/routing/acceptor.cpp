@@ -3,15 +3,19 @@
 
 namespace xTunnel
 {
-    Acceptor::Acceptor(const Handler& handler)
-        : _handler(handler)
-    {
-    }
-
     Acceptor::~Acceptor()
     {
         UniqueLock lock(_mutex);
         _handler = Handler();
+    }
+
+    void Acceptor::Start(const Handler& handler)
+    {
+        UniqueLock lock(_mutex);
+        _handler = handler;
+        lock.unlock();
+
+        BeginAccept();
     }
 
     void Acceptor::OnAccept(const AcceptResult& res)

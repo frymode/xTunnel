@@ -6,12 +6,10 @@
 
 namespace xTunnel
 {
-    SocketAcceptor::SocketAcceptor(const LocalSocketRulePtr& rule, const Handler& handler)
-        : Acceptor(handler),
-          _rule(rule),
+    SocketAcceptor::SocketAcceptor(const LocalSocketRulePtr& rule)
+        : _rule(rule),
           _impl(io_service_pool::get_io_service(), tcp::endpoint(tcp::v4(), rule->port))
     {
-        BeginAccept();
     }
 
     SocketAcceptor::~SocketAcceptor()

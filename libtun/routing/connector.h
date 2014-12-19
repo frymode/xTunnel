@@ -10,12 +10,13 @@ namespace xTunnel
         typedef AsyncResult<EndpointPtr> ConnectResult;
         typedef function<void(const ConnectResult& res)> Handler;
 
-        Connector(const Handler& handler);
         virtual ~Connector() = 0;
+        virtual void Start(const Handler& handler);
 
     protected:
+        virtual void BeginConnect() = 0;
         void OnConnect(const ConnectResult& res);
-    
+
     private:
         Mutex _mutex;
         Handler _handler;

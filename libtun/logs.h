@@ -39,6 +39,7 @@ namespace xTunnel
         void ConfigureLoggers(const Config& config);
 
         void AddConsoleAppender(Logger& logger);
+        void AddDebugAppender(Logger& logger);
         void AddFileAppender(Logger& logger, const string& path);
 
         void DisableLogging();

@@ -6,12 +6,10 @@
 
 namespace xTunnel
 {
-    SocketConnector::SocketConnector(const RemoteSocketRulePtr& rule, const Handler& handler)
-        : Connector(handler),
-          _rule(rule)
+    SocketConnector::SocketConnector(const RemoteSocketRulePtr& rule)
+        :_rule(rule)
     {
         _socket = make_shared<Socket>(io_service_pool::get_io_service());
-        BeginConnect();
     }
 
     SocketConnector::~SocketConnector()
@@ -28,16 +26,21 @@ namespace xTunnel
         tcp::resolver resolver(_socket->get_io_service());
         auto endpoint_iterator = resolver.resolve(query);
 
+        LOG_DEBUG(logs::net, "Connecting to " << _rule->description());
         boost::asio::async_connect(*_socket, endpoint_iterator,
             bind(&SocketConnector::HandleConnect, shared_from_this(), placeholders::_1));
     }
-    
+
     void SocketConnector::HandleConnect(weak_ptr<SocketConnector> self, const ErrorCode& error)
     {
         auto connector = self.lock();
         if (connector)
         {
             connector->EndConnect(error);
+        }
+        else
+        {
+            LOG_DEBUG(logs::net, "Connector instance destroyed while connecting");
         }
     }
 
@@ -51,6 +54,7 @@ namespace xTunnel
             return;
         }
 
+        LOG_DEBUG(logs::net, "Connected to " << _rule->description());
         _socket->set_option(tcp::no_delay(true));
         _socket->set_option(tcp::socket::keep_alive(true));
 
